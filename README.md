@@ -6,7 +6,48 @@ English | [简体中文](./README.zh_CN.md)
 
 ## Introduction
 
-*Coming soon*
+*Redux Inspector for flipper (Extensible mobile app debugger).*
+
+## Quick Start
+
+### Prerequisites
+
+Before starting make sure you have:
+
+- Installed [Flipper Desktop](https://fbflipper.com/docs/getting-started.html)
+
+### Installation
+
+Create a directory `~/flipper-plugins`，[Flipper](https://fbflipper.com) can dynamically load custom plugins for this directory
+
+```
+$ mkdir ~/flipper-plugins
+$ cd ~/flipper-plugins
+```
+
+Clone the plugin to this directory
+
+```
+$ git clone --depth 1 --single-branch --branch master https://github.com/blankapp/flipper-plugin-reduxinspector.git
+```
+
+Add the path to `~/.flipper/config.json`
+
+```diff
+{
+    "pluginPaths": [
++      "~/flipper-plugins"
+    ],
+    "disabledPlugins": [],
+    "lastWindowPosition": {
+        "x": 0,
+        "y": 23,
+        "width": 1680,
+        "height": 947
+    },
+    "updaterEnabled": true
+}
+```
 
 ## Discussion
 
