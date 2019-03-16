@@ -1,0 +1,11 @@
+{
+  "name": "flipper-plugin-reduxinspector",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "title": "Redux Inspector",
+  "bugs": {
+    "email": "lijy91@foxmail.com"
+  },
+  "dependencies": {}
+}
