@@ -6,8 +6,19 @@ import {
   SearchableTable,
   Text,
   Panel,
+  DataDescription,
   ManagedDataInspector,
+  PluginProps,
+  Notification,
 } from 'flipper';
+
+type PersistedState = {|
+  actions: Array<any>,
+|};
+
+type State = {|
+  selectedIds: Array<string>,
+|};
 
 function formatTimestamp(timestamp: number): string {
   const date = new Date(timestamp);
@@ -19,28 +30,31 @@ function formatTimestamp(timestamp: number): string {
 }
 
 const COLUMN_SIZE = {
+  timeStamp: 100,
   actionType: 'flex',
-  timeStamp: 200,
 };
 
 const COLUMNS = {
-  actionType: {
-    value: 'Action Type',
-  },
   timeStamp: {
     value: 'Time',
   },
+  actionType: {
+    value: 'Action Type',
+  },
 };
 
-class FlipperReduxInspectorPlugin extends FlipperPlugin {
+class FlipperReduxInspectorPlugin extends FlipperPlugin<State, *, PersistedState> {
   static id = 'ReduxInspector';
 
-  constructor(props) {
+  static defaultPersistedState = {
+    actions: [],
+  };
+
+  constructor(props: PluginProps<State, *, PersistedState>) {
     super(props);
 
     this.state = {
       selectedIds: [],
-      datas: []
     };
   }
 
@@ -49,36 +63,50 @@ class FlipperReduxInspectorPlugin extends FlipperPlugin {
   }
 
   handleNewActionEvent = (data) => {
-    this.setState({
-      datas: [...this.state.datas, data],
+    this.props.setPersistedState({
+      actions: [...this.props.persistedState.actions, data]
     });
   }
 
   clear = () => {
-    this.setState({
-      selectedIds: [],
-      datas: [],
-    });
+    this.setState({ selectedIds: [] });
+    this.props.setPersistedState({ actions: [] });
   }
 
   onRowHighlighted = (keys) => {
-    this.setState({
-      selectedIds: keys,
-    });
+    this.setState({ selectedIds: keys });
   };
 
   renderSidebar = () => {
-    const { selectedIds, datas } = this.state;
+    const { selectedIds } = this.state;
     const selectedId = selectedIds.length !== 1 ? null : selectedIds[0];
 
     if (selectedId != null) {
-      const selectedData = datas.find(v => v.uniqueId === selectedId);
-      const state = typeof selectedData.state === 'string' ? JSON.parse(selectedData.state) : selectedData.state;
+      const { actions } = this.props.persistedState;
+      const selectedData = actions.find(v => v.uniqueId === selectedId);
+
+      const {
+        payload,
+        prevState,
+        nextState,
+      } = selectedData;
+      const parsedPayload = typeof payload === 'string' ? JSON.parse(payload) : payload;
+      const parsedPrevState = typeof prevState === 'string' ? JSON.parse(prevState) : prevState;
+      const parsedNextState = typeof nextState === 'string' ? JSON.parse(nextState) : nextState;
 
       return (
-        <Panel floating={false} heading={'State'}>
-          <ManagedDataInspector data={state} expandRoot={true} />
-        </Panel>
+        <div>
+          <Panel floating={false} heading={'Payload'}>
+            {
+              typeof parsedPayload !== 'object' ? <DataDescription type={typeof parsedPayload} value={parsedPayload} /> : (
+                <ManagedDataInspector data={parsedPayload} expandRoot={true} />
+              )
+            }
+          </Panel>
+          <Panel floating={false} heading={'State'}>
+            <ManagedDataInspector diff={parsedPrevState} data={parsedNextState} expandRoot={true} />
+          </Panel>
+        </div>
       );
     } else {
       return null;
@@ -104,8 +132,8 @@ class FlipperReduxInspectorPlugin extends FlipperPlugin {
   }
 
   render() {
-    const { datas } = this.state;
-    const rows = datas.map(v => this.buildRow(v));
+    const { actions } = this.props.persistedState;
+    const rows = actions.map(v => this.buildRow(v));
 
     return (
       <FlexColumn grow={true}>
