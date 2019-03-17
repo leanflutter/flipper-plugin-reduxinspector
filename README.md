@@ -8,6 +8,8 @@ English | [简体中文](./README.zh_CN.md)
 
 *Redux Inspector for flipper (Extensible mobile app debugger).*
 
+![reduxinspector](./snapshot.png)
+
 ## Quick Start
 
 ### Prerequisites
@@ -47,6 +49,17 @@ Add the path to `~/.flipper/config.json`
     },
     "updaterEnabled": true
 }
+```
+
+Build plugin
+
+> For the first time, please run the development version to build the custom plugin, and then use the production version directly.
+
+```
+$ git clone https://github.com/facebook/flipper.git
+$ cd flipper
+$ yarn
+$ yarn start
 ```
 
 ## Discussion

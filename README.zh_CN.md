@@ -8,6 +8,8 @@
 
 *Redux Inspector for flipper (Extensible mobile app debugger).*
 
+![reduxinspector](./snapshot.png)
+
 ## 快速开始
 
 ### 必备条件
@@ -47,6 +49,17 @@ $ git clone --depth 1 --single-branch --branch master https://github.com/blankap
     },
     "updaterEnabled": true
 }
+```
+
+编译插件
+
+> 首次使用请运行开发版对自定义插件进行编译，后续即可直接使用生产版。
+
+```
+$ git clone https://github.com/facebook/flipper.git
+$ cd flipper
+$ yarn
+$ yarn start
 ```
 
 ## 探讨
