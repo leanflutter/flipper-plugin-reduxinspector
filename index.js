@@ -20,6 +20,17 @@ type State = {|
   selectedIds: Array<string>,
 |};
 
+function tryConvertToJson(value: any): string {
+  if (typeof value === 'string' && (
+    value.startsWith('{') || value.startsWith('[')
+  )) {
+    try {
+      return JSON.parse(value);
+    } catch (e) { }
+  }
+  return value;
+}
+
 function formatTimestamp(timestamp: number): string {
   const date = new Date(timestamp);
   return `${date.getHours().toString().padStart(2, '0')}:${
@@ -90,9 +101,10 @@ class FlipperReduxInspectorPlugin extends FlipperPlugin<State, *, PersistedState
         prevState,
         nextState,
       } = selectedData;
-      const parsedPayload = typeof payload === 'string' ? JSON.parse(payload) : payload;
-      const parsedPrevState = typeof prevState === 'string' ? JSON.parse(prevState) : prevState;
-      const parsedNextState = typeof nextState === 'string' ? JSON.parse(nextState) : nextState;
+
+      let parsedPayload = tryConvertToJson(payload);
+      let parsedPrevState = tryConvertToJson(prevState);
+      let parsedNextState = tryConvertToJson(nextState);
 
       return (
         <div>
@@ -104,7 +116,11 @@ class FlipperReduxInspectorPlugin extends FlipperPlugin<State, *, PersistedState
             }
           </Panel>
           <Panel floating={false} heading={'State'}>
-            <ManagedDataInspector diff={parsedPrevState} data={parsedNextState} expandRoot={true} />
+            {
+              typeof parsedNextState !== 'object' ? <DataDescription type={typeof parsedNextState} value={parsedNextState} /> : (
+                <ManagedDataInspector diff={parsedPrevState} data={parsedNextState} expandRoot={true} />
+              )
+            }
           </Panel>
         </div>
       );
