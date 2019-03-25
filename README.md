@@ -8,6 +8,8 @@ English | [简体中文](./README.zh_CN.md)
 
 *Redux Inspector for flipper (Extensible mobile app debugger).*
 
+> P.S. [Flutter Debugger](https://github.com/blankapp/flutter-debugger) The plugin is built in, and the following installation instructions can be ignored.
+
 ![reduxinspector](./snapshot.png)
 
 ## Quick Start
@@ -64,7 +66,7 @@ $ yarn start
 
 ## Discussion
 
-If you have any suggestions or questions about this project, you can discuss it by [Telegram](https://t.me/lijy91) or my wechat.
+If you have any suggestions or questions about this project, you can discuss it by [Telegram Group](https://t.me/flutterdebugger) or my wechat.
 
 ![](http://blankapp.org/assets/images/wechat_qrcode.png)
 
