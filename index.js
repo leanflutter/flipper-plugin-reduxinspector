@@ -1,3 +1,4 @@
+/* eslint-disable header/header */
 import {
   FlipperPlugin,
   Button,
@@ -9,7 +10,6 @@ import {
   DataDescription,
   ManagedDataInspector,
   PluginProps,
-  Notification,
 } from 'flipper';
 
 type PersistedState = {|
@@ -61,22 +61,26 @@ class FlipperReduxInspectorPlugin extends FlipperPlugin<State, *, PersistedState
     actions: [],
   };
 
+  static persistedStateReducer = (
+    persistedState: PersistedState,
+    method: string,
+    data: any,
+  ): PersistedState => {
+    return {
+      ...persistedState,
+      actions: [
+        ...persistedState.actions,
+        data,
+      ],
+    };
+  };
+
   constructor(props: PluginProps<State, *, PersistedState>) {
     super(props);
 
     this.state = {
       selectedIds: [],
     };
-  }
-
-  init() {
-    this.client.subscribe('newAction', this.handleNewActionEvent);
-  }
-
-  handleNewActionEvent = (data) => {
-    this.props.setPersistedState({
-      actions: [...this.props.persistedState.actions, data]
-    });
   }
 
   clear = () => {
