@@ -1,8 +1,10 @@
 {
   "name": "flipper-plugin-reduxinspector",
-  "version": "1.0.0",
+  "version": "1.0.2",
+  "description": "Redux Inspector for flipper",
   "main": "index.js",
   "license": "MIT",
+  "keywords": ["flipper-plugin"],
   "title": "Redux Inspector",
   "bugs": {
     "email": "lijy91@foxmail.com"

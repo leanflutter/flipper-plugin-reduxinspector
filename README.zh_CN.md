@@ -1,6 +1,12 @@
 # flipper-plugin-reduxinspector
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=lijy91%40live.com&currency_code=USD&source=url)
+[![npm version][npm-image]][npm-url]
+[![Join the chat][telegram-image]][telegram-url]
+
+[npm-image]: https://img.shields.io/npm/v/flipper-plugin-reduxinspector.svg
+[npm-url]: https://www.npmjs.com/package/flipper-plugin-reduxinspector
+[telegram-image]:https://img.shields.io/badge/chat-on%20telegram-blue.svg
+[telegram-url]: https://t.me/flipper4flutter
 
 [English](./README.md) | 简体中文
 
@@ -8,9 +14,7 @@
 
 *Redux Inspector for flipper (Extensible mobile app debugger).*
 
-> P.S. [Flutter Debugger](https://github.com/blankapp/flutter-debugger) 已内置该插件，可忽略以下安装说明。
-
-![reduxinspector](./snapshot.png)
+![](./snapshots/snapshot.png)
 
 ## 快速开始
 
@@ -18,57 +22,24 @@
 
 开始之前确保你已安装：
 
-- 已安装 [Flipper Desktop](https://fbflipper.com/docs/getting-started.html)
+- 已安装 [Flipper Desktop](https://fbflipper.com)
 
 ### 安装
 
-创建一个目录 `~/flipper-plugins`，[Flipper](https://fbflipper.com) 可动态加载该目录的自定义插件
+通过单击左侧边栏底部的 "Manage Plugins..."，然后选择 "Install Plugins" 选项卡，可以找到它以及其他可用的 Flipper 插件。
 
-```
-$ mkdir ~/flipper-plugins
-$ cd ~/flipper-plugins
-```
+![](./snapshots/install-plugins.png)
 
-克隆插件到该目录下
 
-```
-$ git clone --depth 1 --single-branch --branch master https://github.com/blankapp/flipper-plugin-reduxinspector.git
-```
+## 相关链接
 
-将路径在添加到 `~/.flipper/config.json`
-
-```diff
-{
-    "pluginPaths": [
-+      "~/flipper-plugins"
-    ],
-    "disabledPlugins": [],
-    "lastWindowPosition": {
-        "x": 0,
-        "y": 23,
-        "width": 1680,
-        "height": 947
-    },
-    "updaterEnabled": true
-}
-```
-
-编译插件
-
-> 首次使用请运行开发版对自定义插件进行编译，后续即可直接使用生产版。
-
-```
-$ git clone https://github.com/facebook/flipper.git
-$ cd flipper
-$ yarn
-$ yarn start
-```
+- https://github.com/blankapp/flutter_flipperkit
+- https://github.com/blankapp/flutter_flipperkit_plugins
+- https://github.com/blankapp/flutter_flipperkit_examples
 
 ## 探讨
 
-如果您对此项目有任何建议或疑问，可以通过 [Telegram Group](https://t.me/flutterdebugger) 或我的微信进行讨论。
-
-![](http://blankapp.org/assets/images/wechat_qrcode.png)
+欢迎加入「Flipper for Flutter」的 [Telegram Group](https://t.me/flipper4flutter) 与我分享你的建议和想法。
 
 ## 许可证
 

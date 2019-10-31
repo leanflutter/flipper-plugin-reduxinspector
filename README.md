@@ -1,6 +1,12 @@
 # flipper-plugin-reduxinspector
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=lijy91%40live.com&currency_code=USD&source=url)
+[![npm version][npm-image]][npm-url]
+[![Join the chat][telegram-image]][telegram-url]
+
+[npm-image]: https://img.shields.io/npm/v/flipper-plugin-reduxinspector.svg
+[npm-url]: https://www.npmjs.com/package/flipper-plugin-reduxinspector
+[telegram-image]:https://img.shields.io/badge/chat-on%20telegram-blue.svg
+[telegram-url]: https://t.me/flipper4flutter
 
 English | [简体中文](./README.zh_CN.md)
 
@@ -8,9 +14,7 @@ English | [简体中文](./README.zh_CN.md)
 
 *Redux Inspector for flipper (Extensible mobile app debugger).*
 
-> P.S. [Flutter Debugger](https://github.com/blankapp/flutter-debugger) The plugin is built in, and the following installation instructions can be ignored.
-
-![reduxinspector](./snapshot.png)
+![](./snapshots/snapshot.png)
 
 ## Quick Start
 
@@ -18,57 +22,23 @@ English | [简体中文](./README.zh_CN.md)
 
 Before starting make sure you have:
 
-- Installed [Flipper Desktop](https://fbflipper.com/docs/getting-started.html)
+- Installed [Flipper Desktop](https://fbflipper.com)
 
 ### Installation
 
-Create a directory `~/flipper-plugins`，[Flipper](https://fbflipper.com) can dynamically load custom plugins for this directory
+You can find it, alongside other available Flipper plugins, by clicking on "Manage Plugins..." in the bottom of the left sidebar and selecting the "Install Plugins" tab.
 
-```
-$ mkdir ~/flipper-plugins
-$ cd ~/flipper-plugins
-```
+![](./snapshots/install-plugins.png)
 
-Clone the plugin to this directory
+## Related Links
 
-```
-$ git clone --depth 1 --single-branch --branch master https://github.com/blankapp/flipper-plugin-reduxinspector.git
-```
-
-Add the path to `~/.flipper/config.json`
-
-```diff
-{
-    "pluginPaths": [
-+      "~/flipper-plugins"
-    ],
-    "disabledPlugins": [],
-    "lastWindowPosition": {
-        "x": 0,
-        "y": 23,
-        "width": 1680,
-        "height": 947
-    },
-    "updaterEnabled": true
-}
-```
-
-Build plugin
-
-> For the first time, please run the development version to build the custom plugin, and then use the production version directly.
-
-```
-$ git clone https://github.com/facebook/flipper.git
-$ cd flipper
-$ yarn
-$ yarn start
-```
+- https://github.com/blankapp/flutter_flipperkit
+- https://github.com/blankapp/flutter_flipperkit_plugins
+- https://github.com/blankapp/flutter_flipperkit_examples
 
 ## Discussion
 
-If you have any suggestions or questions about this project, you can discuss it by [Telegram Group](https://t.me/flutterdebugger) or my wechat.
-
-![](http://blankapp.org/assets/images/wechat_qrcode.png)
+If you have any suggestions or questions about this project, you can discuss it by [Telegram Group](https://t.me/flipper4flutter) with me.
 
 ## License
 
