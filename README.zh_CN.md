@@ -6,7 +6,7 @@
 [npm-image]: https://img.shields.io/npm/v/flipper-plugin-reduxinspector.svg
 [npm-url]: https://www.npmjs.com/package/flipper-plugin-reduxinspector
 [telegram-image]:https://img.shields.io/badge/chat-on%20telegram-blue.svg
-[telegram-url]: https://t.me/flipper4flutter
+[telegram-url]: https://t.me/joinchat/I4jz1FE5sBGk7V0jUpzSXg
 
 [English](./README.md) | 简体中文
 
@@ -33,13 +33,13 @@
 
 ## 相关链接
 
-- https://github.com/blankapp/flutter_flipperkit
-- https://github.com/blankapp/flutter_flipperkit_plugins
-- https://github.com/blankapp/flutter_flipperkit_examples
+- https://github.com/learn-flutter-dev/flutter_flipperkit
+- https://github.com/learn-flutter-dev/flutter_flipperkit_plugins
+- https://github.com/learn-flutter-dev/flutter_flipperkit_examples
 
 ## 探讨
 
-欢迎加入「Flipper for Flutter」的 [Telegram Group](https://t.me/flipper4flutter) 与我分享你的建议和想法。
+欢迎加入「Flipper for Flutter」的 [Telegram Group](https://t.me/joinchat/I4jz1FE5sBGk7V0jUpzSXg) 与我分享你的建议和想法。
 
 ## 许可证
 

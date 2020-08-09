@@ -6,7 +6,7 @@
 [npm-image]: https://img.shields.io/npm/v/flipper-plugin-reduxinspector.svg
 [npm-url]: https://www.npmjs.com/package/flipper-plugin-reduxinspector
 [telegram-image]:https://img.shields.io/badge/chat-on%20telegram-blue.svg
-[telegram-url]: https://t.me/flipper4flutter
+[telegram-url]: https://t.me/joinchat/I4jz1FE5sBGk7V0jUpzSXg
 
 English | [简体中文](./README.zh_CN.md)
 
@@ -32,13 +32,13 @@ You can find it, alongside other available Flipper plugins, by clicking on "Mana
 
 ## Related Links
 
-- https://github.com/blankapp/flutter_flipperkit
-- https://github.com/blankapp/flutter_flipperkit_plugins
-- https://github.com/blankapp/flutter_flipperkit_examples
+- https://github.com/learn-flutter-dev/flutter_flipperkit
+- https://github.com/learn-flutter-dev/flutter_flipperkit_plugins
+- https://github.com/learn-flutter-dev/flutter_flipperkit_examples
 
 ## Discussion
 
-If you have any suggestions or questions about this project, you can discuss it by [Telegram Group](https://t.me/flipper4flutter) with me.
+If you have any suggestions or questions about this project, you can discuss it by [Telegram Group](https://t.me/joinchat/I4jz1FE5sBGk7V0jUpzSXg) with me.
 
 ## License
 
