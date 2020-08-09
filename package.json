@@ -1,13 +1,27 @@
 {
+  "$schema": "https://fbflipper.com/schemas/plugin-package/v2.json",
   "name": "flipper-plugin-reduxinspector",
+  "id": "flipper-plugin-reduxinspector",
   "version": "1.0.2",
   "description": "Redux Inspector for flipper",
-  "main": "index.js",
+  "main": "dist/bundle.js",
+  "flipperBundlerEntry": "index.js",
   "license": "MIT",
-  "keywords": ["flipper-plugin"],
+  "keywords": [
+    "flipper-plugin"
+  ],
   "title": "Redux Inspector",
   "bugs": {
     "email": "lijy91@foxmail.com"
   },
-  "dependencies": {}
+  "peerDependencies": {
+    "flipper": "latest"
+  },
+  "devDependencies": {
+    "flipper": "latest",
+    "flipper-pkg": "latest"
+  },
+  "scripts": {
+    "prepack": "flipper-pkg lint && flipper-pkg bundle"
+  }
 }
