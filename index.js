@@ -55,7 +55,7 @@ const COLUMNS = {
 };
 
 class FlipperReduxInspectorPlugin extends FlipperPlugin<State, *, PersistedState> {
-  static id = 'ReduxInspector';
+  static id = 'flipper-plugin-reduxinspector';
 
   static defaultPersistedState = {
     actions: [],
